@@ -1,0 +1,42 @@
+{
+  "name": "ut-jsonpath",
+  "version": "0.1.0",
+  "description": "jsonpath with extended functionality",
+  "main": "index.js",
+  "dependencies": {
+    "jsonpath": "1.0.0"
+  },
+  "devDependencies": {
+    "ut-tools": "^5.32.5"
+  },
+  "scripts": {
+    "lint": "ut-lint .",
+    "release": "ut-release",
+    "changelog": "ut-changelog",
+    "check": "ut-check",
+    "cover": "ut-cover",
+    "lint-js": "ut-lint-js .",
+    "postpublish": "ut-postpublish",
+    "postversion": "ut-postversion",
+    "precommit": "ut-precommit",
+    "prepublish": "ut-prepublish",
+    "prepush": "ut-prepush",
+    "pretest": "ut-pretest",
+    "preversion": "ut-preversion",
+    "test": "ut-test",
+    "version": "ut-version",
+    "jenkins": "ut-jenkins",
+    "gitlab": "ut-gitlab"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stambata/ut-jsonpath.git"
+  },
+  "keywords": ["jsonpath", "json2json", "json transform"],
+  "author": "Stamen Peev",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/stambata/ut-jsonpath/issues"
+  },
+  "homepage": "https://github.com/stambata/ut-jsonpath#readme"
+}
