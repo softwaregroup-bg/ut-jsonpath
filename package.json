@@ -1,6 +1,6 @@
 {
   "name": "ut-jsonpath",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "jsonpath with extended functionality",
   "main": "index.js",
   "dependencies": {
@@ -33,6 +33,10 @@
     "type": "git",
     "url": "git@github.com:softwaregroup-bg/ut-jsonpath.git"
   },
-  "keywords": ["jsonpath", "json2json", "json transform"],
+  "keywords": [
+    "jsonpath",
+    "json2json",
+    "json transform"
+  ],
   "license": "Apache-2.0"
 }
