@@ -1,5 +1,5 @@
 const JSONPath = require('jsonpath').JSONPath;
-
+const pathExpressionRegexp = /(\$(\.{1,2}(\*|\w{1,})){0,}(\[[\w.<>*@&:?\s\-,"=()]{1,}\]){0,})/g;
 class UtJSONPath extends JSONPath {
     extract(source, template, obj = {}, key) {
         if (Array.isArray(template)) {
@@ -22,11 +22,25 @@ class UtJSONPath extends JSONPath {
                 this.extract(source, template[prop], obj, prop);
             }
         } else if (typeof template === 'string') {
-            if (template[0] === '$') {
-                const val = this.query(source, template);
-                obj[key] = val[0];
+            const matches = template.match(pathExpressionRegexp);
+            let value;
+            if (matches) {
+                if (matches.length === 1) {
+                    value = this.query(source, matches[0])[0];
+                } else {
+                    value = matches.reduce((template, match) => {
+                        return template.replace(match, (replacement) => {
+                            return this.query(source, match)[0] || replacement;
+                        });
+                    }, template);
+                }
             } else {
-                obj[key] = template;
+                value = template;
+            }
+            if (key) {
+                obj[key] = value;
+            } else {
+                obj = value;
             }
         }
         return obj;
@@ -34,5 +48,6 @@ class UtJSONPath extends JSONPath {
 }
 
 const instance = new UtJSONPath();
+instance.JSONPath = UtJSONPath;
 
 module.exports = instance;
