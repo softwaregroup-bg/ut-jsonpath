@@ -59,3 +59,5 @@ typings/
 
 # VS CODE configuration
 .vscode
+
+package-lock.json
