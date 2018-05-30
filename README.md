@@ -51,3 +51,6 @@ var extracted = jp.extract(country, template);
     }
 */
 ```
+
+Values are also composable. I.e. Multiple selectors can be specified. e.g: '$.name $.population'
+The necessary interpolations will be applied as long as the selectors are jsonpath compliant.
