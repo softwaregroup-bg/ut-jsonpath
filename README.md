@@ -3,15 +3,15 @@ This module provides all the functionality that [jsonpath](https://github.com/dc
 
 ## Additional Methods
 
-#### jp.extract(obj, template)
+#### jp.transform(obj, template)
 
-Extract and/or rename certain fields from an `obj` based on a `template`.
+Template based json-to-json transformation.
 
 ```javascript
 
-var jp = require('ut-jsonpath');
+const jp = require('ut-jsonpath');
 
-var country = {
+const data = {
     name: 'Bulgaria',
     population: 7101859,
     cities: [
@@ -26,7 +26,7 @@ var country = {
     ]
 };
 
-var template = {
+const template = {
     countryName: '$.name',
     population: '$.population',
     cities: ['$.cities', {
@@ -34,7 +34,7 @@ var template = {
     }]
 };
 
-var extracted = jp.extract(country, template);
+const transformed = jp.transform(data, template);
 
 /*
     {

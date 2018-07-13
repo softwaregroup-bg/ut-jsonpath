@@ -1,7 +1,7 @@
 const JSONPath = require('jsonpath').JSONPath;
 const pathExpressionRegexp = /(\$(\.{1,2}(\*|\w{1,})){0,}(\[[\w.<>*@&:?\s\-,"=()]{1,}\]){0,})/g;
 class UtJSONPath extends JSONPath {
-    extract(source, template, obj = {}, key) {
+    transform(source, template, obj = {}, key) {
         if (Array.isArray(template)) {
             const path = template[0];
             const subpath = template[1];
@@ -9,7 +9,7 @@ class UtJSONPath extends JSONPath {
             if (arr.length && subpath) {
                 obj = obj[key] = [];
                 arr.forEach((record, i) => {
-                    this.extract(record, subpath, obj, i);
+                    this.transform(record, subpath, obj, i);
                 });
             } else {
                 obj[key] = arr;
@@ -19,7 +19,7 @@ class UtJSONPath extends JSONPath {
                 obj = obj[key] = {};
             }
             for (let prop in template) {
-                this.extract(source, template[prop], obj, prop);
+                this.transform(source, template[prop], obj, prop);
             }
         } else if (typeof template === 'string') {
             const matches = template.match(pathExpressionRegexp);

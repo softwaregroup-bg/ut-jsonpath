@@ -60,4 +60,9 @@ typings/
 # VS CODE configuration
 .vscode
 
+# temporary files
+temp.*
+
+# package locks
 package-lock.json
+yarn.lock
