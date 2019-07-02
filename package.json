@@ -4,7 +4,7 @@
   "description": "jsonpath with extended functionality",
   "main": "index.js",
   "dependencies": {
-    "jsonpath": "1.0.0"
+    "jsonpath": "1.0.2"
   },
   "devDependencies": {
     "ut-tools": "^5.32.10"
