@@ -1,3 +1,14 @@
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/softwaregroup-bg/ut-jsonpath/compare/v1.0.0...v1.0.1) (2019-07-02)
+
+
+### Bug Fixes
+
+* update to jsonpath@1.0.2 ([b370cdf](https://github.com/softwaregroup-bg/ut-jsonpath/commit/b370cdf))
+* update ut-tools ([36bcdf1](https://github.com/softwaregroup-bg/ut-jsonpath/commit/36bcdf1))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/softwaregroup-bg/ut-jsonpath/compare/v0.2.0...v1.0.0) (2018-07-13)
 

@@ -1,6 +1,6 @@
 {
   "name": "ut-jsonpath",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "jsonpath with extended functionality",
   "main": "index.js",
   "dependencies": {
